@@ -98,7 +98,7 @@ intersection(crossStreetOne, crossStreetTwo, borough, boroughCrossStreetTwo, com
   - callBack: node style call back function callBack(err, response)  
 
 ```
-place(name, borough, zip, responseType, callBack):
+place(name, borough, zip, responseType, callBack)
 ```  
   **Must supply either borough or zip code.**  
   - name: Name of place in NYC. **Required**   
