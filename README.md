@@ -46,7 +46,9 @@ DIRECTION = {
 
 *For all API calls `responseType` will default to `RESPONSE_TYPE.JSON` if undefined or null.*
 
-`address(houseNumber, street, borough, zip, responseType, callBack)`  
+```
+address(houseNumber, street, borough, zip, responseType, callBack)
+```  
   **Must supply either borough or zip code.**  
   - houseNumber: The house number of the address. **Required**  
   - street: Street name or 7-digit street code. **Required**  
@@ -55,19 +57,25 @@ DIRECTION = {
   - responseType: One of the above response types.   
   - callBack: node style call back function callBack(err, response)  
 
-`bbl(borough, block, lot, responseType, callBack)`
+```
+bbl(borough, block, lot, responseType, callBack)
+```
   - borough: One of the above boroughs. **Required**  
   - block: Tax Block. **Required**   
   - lot: Tax Lot. **Required**   
   - responseType: One of the above response types.   
   - callBack: node style call back function callBack(err, response)
 
-`bin(bin, responseType, callBack)`
+```
+bin(bin, responseType, callBack)
+```
   - bin: Building Identification Number. **Required**   
   - responseType: One of the above response types.   
   - callBack: node style call back function callBack(err, response)  
 
-`blockface(onStreet, crossStreetOne, crossStreetTwo, borough, boroughCrossStreetOne, boroughCrossStreetTwo, compassDirection, responseType, callBack)`
+```
+blockface(onStreet, crossStreetOne, crossStreetTwo, borough, boroughCrossStreetOne, boroughCrossStreetTwo, compassDirection, responseType, callBack)
+```
   - onStreet: Street name of target blockface. **Required**   
   - crossStreetOne: First cross street of blockface. **Required**   
   - crossStreetTwo: Second cross street of blockface. **Required**   
@@ -78,7 +86,9 @@ DIRECTION = {
   - responseType: One of the above response types.   
   - callBack: node style call back function callBack(err, response)  
 
-`intersection(crossStreetOne, crossStreetTwo, borough, boroughCrossStreetTwo, compassDirection, responseType, callBack)`
+```
+intersection(crossStreetOne, crossStreetTwo, borough, boroughCrossStreetTwo, compassDirection, responseType, callBack)
+```
   - crossStreetOne: First cross street. **Required**   
   - crossStreetTwo: Second cross street. **Required**   
   - borough: One of the above boroughs. **Required**     
@@ -87,7 +97,9 @@ DIRECTION = {
   - responseType: One of the above response types.   
   - callBack: node style call back function callBack(err, response)  
 
-`place(name, borough, zip, responseType, callBack):`  
+```
+place(name, borough, zip, responseType, callBack):
+```  
   **Must supply either borough or zip code.**  
   - name: Name of place in NYC. **Required**   
   - borough: One of the above boroughs. *Optional*  
