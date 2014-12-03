@@ -33,6 +33,8 @@ var geoclient = (function() {
     W: 'W',
   };
 
+  var API_URL = 'https://api.cityofnewyork.us/geoclient/v1/';
+
   var app_id, app_key;
 
   function MissingValueException(message) {
@@ -251,7 +253,8 @@ var geoclient = (function() {
 
   var buildApiUrl = function(type, values, responseType) {
     responseType = responseType || RESPONSE_TYPE.JSON;
-    var url = ['https://api.cityofnewyork.us/geoclient/', 'v1/'];
+    var url = [];
+    url.push(API_URL);
 
     switch (type) {
       case TYPE.ADDRESS:
@@ -282,10 +285,11 @@ var geoclient = (function() {
   };
 
   var callApi = function(url, callBack) {
-    console.log('requesting', url);
+    // console.log('requesting', url);
     https.get(url, function(res) {
       res.pipe(concat(function (data) { callBack(null, data.toString()); }));
     }).on('error', function(err) {
+      // console.log('ERROR', err);
       callBack(err);
     });
   };
@@ -310,7 +314,7 @@ var geoclient = (function() {
       return getAddress({ houseNumber: houseNumber,
         street: street,
         borough: borough,
-        zip: zip }, responseType, callBack)
+        zip: zip }, responseType, callBack);
     },
     bbl: function(borough, block, lot, responseType, callBack) {
       /*
